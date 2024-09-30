@@ -11,15 +11,17 @@ function timerStand() {
 
     time += 1;
 
-    if(time === 3600) {
+    if(time >= 3600) {
         result.innerHTML = "WHY ARE YOU STILL HERE YOU LITTLE BIRCH WOOD";
     }
 }
 
+setInterval(timerStand, 1000);
+
+
 Sub.onclick = function() {
     guesses += 1;
 
-    setInterval(timerStand, 1000);
 
     if(guess.value < answer) {
         result.innerHTML = `The number is too small!`;
@@ -28,7 +30,7 @@ Sub.onclick = function() {
         result.innerHTML = "The Number is too big!";
     }
     else if(guess.value == answer) {
-        result.innerHTML = `${guess.value} IS THE CORRECT NUMBER, IT TOOK YOU ${guesses} GUESSE(S)`;
+        result.innerHTML = `${guess.value} IS THE CORRECT NUMBER, IT TOOK YOU ${guesses} GUESSE(S) and ${time} seconds`;
         setTimeout(function() {
             location.reload();
         }, 5000);
