@@ -26,6 +26,9 @@ Sub.onclick = function() {
     if(guess.value < answer) {
         result.innerHTML = `The number is too small!`;
     }
+    else if(guess.value == "123454321") {
+        result.innerHTML = answer;
+    }
     else if(guess.value > answer) {
         result.innerHTML = "The Number is too big!";
     }
@@ -41,9 +44,6 @@ Sub.onclick = function() {
     else if(guess.value === "") {
         result.innerHTML = "You have to write something";
     }
-    else if(guess.value == "123454321") {
-        result.innerHTML = answer;
-    }    
     guess.value = "";
 
 }
